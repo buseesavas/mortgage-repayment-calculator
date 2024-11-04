@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/mortgage.css" />
+    <script src="assets/js/mortgage.js" defer></script>
+    <title>Kredi Hesaplayıcı</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="containerInner">
+        <div class="mortgageCalculatorBox">
+          <div class="calculatorHeader">
+            <h2>Mortgage Calculator</h2>
+            <a href="/" class="clearAll">Clear All</a>
+          </div>
+          <div class="mortgageInputs">
+            <div class="mortgageAmount">
+              <h3>Mortgage Amount</h3>
+              <div class="amountInputBox">
+                <p>£</p>
+                <input type="text" class="amountInput" />
+              </div>
+            </div>
+            <div class="mortgageTerm">
+              <h3>Mortgage Term</h3>
+              <div class="termInputBox">
+                <input type="text" class="termInput" />
+                <p>years</p>
+              </div>
+            </div>
+            <div class="interestRate">
+              <h3>Interest Rate</h3>
+              <div class="interestInputBox">
+                <input type="text" class="interestInput" />
+                <p>%</p>
+              </div>
+            </div>
+          </div>
+          <div class="mortgageTypes">
+            <h3>Mortgage Type</h3>
+            <label class="repaymentLabel">
+              <input type="checkbox" class="repaymentInput"/>
+              <span class="checkmark"></span>
+              <span class="repaymentsText">Repayment</span>
+            </label>
+            <label class="interestLabel">
+              <input type="checkbox" class="interestOnlyInput" />
+              <span class="checkmark"></span>
+              <span class="interestText">Interest Only</span>
+            </label>
+          </div>
+          <button class="calculateBtn"><img src="assets/images/calculater-icon.svg" alt="">Calculate Repayments</button>
+        </div>
+        <div class="resultShownHere">
+          <img class="resultImage" src="assets/images/result-img.svg" alt="" />
+          <h4>Results shown here</h4>
+          <p>
+            Complete the form and click “calculate repayments” to see what your
+            monthly repayments would be.
+          </p>
+        </div>
+        <div class="calculationResults">
+          <h5>Your results</h5>
+          <p>
+            Your results are shown below based on the information you provided. To
+            adjust the results, edit the form and click “calculate repayments”
+            again.
+          </p>
+          <div class="calculateResult">
+            <div class="monthlyRepayments"></div>
+            <div class="totalRepay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

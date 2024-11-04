@@ -1,0 +1,438 @@
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  font-family: "Plus Jakarta Sans";
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.mortgageCalculatorBox {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px 24px;
+}
+
+.calculatorHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.clearAll {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: #4e6e7e;
+}
+
+.mortgageInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
+  color: #133041;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: #4e6e7e;
+}
+
+.interestRate,
+.mortgageTerm,
+.mortgageAmount {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mortgageInputs p {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22.5px;
+  text-align: left;
+  color: #4e6e7e;
+  background-color: #e4f4fd;
+  padding: 12.5px 16px;
+}
+
+.termInputBox,
+.interestInputBox {
+  display: flex;
+  border: 1px solid #6b94a8;
+  border-radius: 4px;
+  justify-content: space-between;
+}
+
+.amountInputBox {
+  display: flex;
+  border: 1px solid #6b94a8;
+  border-radius: 4px;
+}
+
+.amountInputBox p {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.termInputBox p,
+.interestInputBox p {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.amountInput,
+.termInput,
+.interestInput {
+  border: none;
+  font-weight: 700;
+  line-height: 22.5px;
+  text-align: left;
+  font-size: 18px;
+  color: #133041;
+  border-radius: 4px;
+  width: 100%;
+  padding-left: 16px;
+}
+
+.calculateBtn {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22.5px;
+  text-align: center;
+  color: #133041;
+  background-color: #d8db2f;
+  border: none;
+  border-radius: 999px;
+  padding: 16.5px 40px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  max-width: 327px;
+}
+
+.calculateBtn:hover {
+  background-color: rgb(236, 237, 152);
+}
+
+.mortgageTypes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mortgageTypes label {
+  border: 1px solid #6b94a8;
+  padding: 12.5px 16px;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22.5px;
+  text-align: left;
+  color: #133041;
+}
+
+.mortgageTypes label:hover {
+  border: 1px solid #d8db2f;
+}
+
+.mortgageTypes label:focus {
+  background-color: rgba(216, 219, 47, 0.15);
+}
+
+.resultShownHere {
+  background-color: #133041;
+  padding: 32px 24px;
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 16px;
+}
+
+.resultShownHere p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  color: #9abed5;
+  margin-top: 16px;
+}
+
+.resultImage {
+  margin-inline: auto;
+}
+
+h5 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.calculationResults {
+  background-color: #133041;
+  padding: 32px 24px;
+}
+
+.calculationResults p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: #9abed5;
+}
+
+.calculateResult {
+  background: rgba(0, 0, 0, 0.25);
+  border-top: 4px solid rgba(216, 219, 47, 1);
+  border-radius: 8px;
+  padding: 32px;
+  margin-top: 24px;
+}
+
+h6 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: #9abed5;
+  margin-bottom: 8px;
+}
+
+.monthlyRepayments p {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 70px;
+  text-align: left;
+  color: #d8db2f;
+  padding-bottom: 32px;
+}
+
+.totalRepay {
+  padding-top: 32px;
+  border-top: 1px solid rgba(154, 190, 213, 0.25);
+}
+
+.totalRepay p {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.repaymentLabel,
+.interesLabel {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  background-color: white;
+}
+
+.interestText,
+.repaymentsText {
+  margin-left: 40px;
+}
+
+.repaymentInput,
+.interestOnlyInput {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  background-color: transparent;
+  border: 1px solid rgba(107, 148, 168, 1);
+  border-radius: 50%;
+}
+
+.repaymentLabel:hover .repaymentInput ~ .checkmark,
+.interestLabel:hover .interestOnlyInput ~ .checkmark {
+  background: transparent;
+}
+
+.repaymentInput:checked ~ .checkmark,
+.interestOnlyInput:checked ~ .checkmark {
+  border: 2px solid #d8db2f;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.repaymentInput:checked ~ .checkmark:after,
+.interestOnlyInput:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkmark:after {
+  top: 3px;
+  left: 3px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #d8db2f;
+}
+
+@media (width >= 768px) {
+  .container {
+    background-color: #e4f4fd;
+    padding: 40px;
+  }
+
+  .mortgageCalculatorBox {
+    background-color: white;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+  }
+
+  .resultShownHere,
+  .calculationResults {
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+  }
+
+  .calculatorHeader {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media (width >= 1110px) {
+  .containerInner {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    max-width: 1008px;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    margin-inline: auto;
+  }
+
+  .mortgageCalculatorBox,
+  .calculationResults {
+    width: 50%;
+    max-width: 504px;
+  }
+
+  .resultShownHere {
+    width: 50%;
+    max-width: 504px;
+  }
+
+  .mortgageCalculatorBox {
+    background-color: white;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 24px;
+  }
+
+  .resultShownHere,
+  .calculationResults {
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-bottom-left-radius: 80px;
+  }
+
+  .resultShownHere {
+    padding: 152px 40px;
+  }
+
+  .calculationResults {
+    padding: 40px;
+  }
+
+  .mortgageCalculatorBox {
+    padding: 40px;
+  }
+}
